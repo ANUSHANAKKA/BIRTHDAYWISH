@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday!</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #fceabb, #f8b500);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 40px;
+      border-radius: 25px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      animation: popIn 2s ease-out;
+    }
+
+    @keyframes popIn {
+      0% { transform: scale(0.5); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .friend-photo {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid #fff;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin: 20px 0 10px;
+      color: #ff4081;
+    }
+
+    p {
+      font-size: 1.2em;
+      color: #444;
+      margin-top: 10px;
+    }
+
+    .quote {
+      font-style: italic;
+      color: #7a4f01;
+      margin-top: 20px;
+    }
+
+    .balloons {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .balloon {
+      position: absolute;
+      bottom: -150px;
+      width: 50px;
+      height: 70px;
+      background: pink;
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      animation: float 6s linear infinite;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(0deg);
+      }
+      100% {
+        transform: translateY(-120vh) rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <img src="C:\\xampp\\htdocs\\BIRTHDAYWISH\\WhatsApp Image 2025-04-17 at 13.00.42.jpeg" alt="Friend's Photo" class="friend-photo" />
+    <h1>Happy Birthday, <span id="friendName"></span>! 🎉</h1>
+    <p>Wishing you a day filled with love, joy, and endless smiles.</p>
+    <div class="quote" id="birthdayQuote"></div>
+  </div>
+
+  <div class="balloons">
+    <div class="balloon" style="left: 10%; background: #ff69b4;"></div>
+    <div class="balloon" style="left: 30%; background: #ffa07a;"></div>
+    <div class="balloon" style="left: 50%; background: #87cefa;"></div>
+    <div class="balloon" style="left: 70%; background: #da70d6;"></div>
+    <div class="balloon" style="left: 90%; background: #f08080;"></div>
+  </div>
+
+  <script>
+    // Ask for friend's name
+    let friendName = prompt("Enter your friend's name:");
+    if (!friendName) {
+      friendName = "Your Bestie"; // fallback if cancelled
+    }
+
+    // Set name and quote
+    document.getElementById("friendName").innerText = friendName;
+    document.getElementById("birthdayQuote").innerText = `"May your birthday be as bright, beautiful, and full of love as you are, ${friendName}!"`;
+  </script>
+
+</body>
+</html>
